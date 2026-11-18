@@ -148,3 +148,10 @@ footer.editorial-footer{background:#f1f3f6!important}
  #menu .menu-accessibility{font-size:.9rem;min-height:44px}
  #menu::before{opacity:.12;position:fixed;pointer-events:none}
 }
+
+/* Retain the quiet dividers around the mobile navigation. */
+@media(max-width:800px){
+ #menu .overlay-top{border-bottom:1px solid #212a5726}
+ #menuSections{border-bottom:1px solid #212a571c!important;padding-bottom:20px}
+ #menu .menu-foot{border-top:1px solid #212a5726}
+}
