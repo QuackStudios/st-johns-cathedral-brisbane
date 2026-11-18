@@ -6,9 +6,16 @@
 .home-intro-mark{color:#fff;filter:drop-shadow(0 2px 9px #0002)}
 .home-intro-bird{width:100%;height:100%;animation:cathedral-glide .86s ease-in-out infinite}
 .home-intro-mark svg{display:block;width:100%;height:100%;overflow:visible;animation:cathedral-arrival .3s cubic-bezier(.2,.7,.3,1) both}
-.home-intro-wing{transform-box:view-box;transform-origin:300px 205px;animation:cathedral-wingbeat .86s cubic-bezier(.45,0,.55,1) infinite}
+.home-intro-wing,.home-intro-rear-wing,.home-intro-feathers,.home-intro-tail{transform-box:view-box}
+.home-intro-wing{transform-origin:300px 205px;animation:cathedral-shoulder .86s cubic-bezier(.45,0,.55,1) infinite}
+.home-intro-rear-wing{opacity:.48;transform-origin:300px 205px;animation:cathedral-rear-wing .86s cubic-bezier(.45,0,.55,1) -.07s infinite}
+.home-intro-feathers{transform-origin:205px 210px;animation:cathedral-feathers .86s cubic-bezier(.4,0,.5,1) .085s infinite}
+.home-intro-tail{transform-origin:314px 340px;animation:cathedral-tail .86s ease-in-out .13s infinite}
 @keyframes cathedral-glide{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
-@keyframes cathedral-wingbeat{0%,100%{transform:rotate(-8deg) scaleY(1.06)}44%{transform:rotate(22deg) scaleY(.58)}72%{transform:rotate(7deg) scaleY(.88)}}
+@keyframes cathedral-shoulder{0%,100%{transform:rotate(-13deg) scaleY(1.06)}43%{transform:rotate(27deg) scaleY(.75)}72%{transform:rotate(3deg) scaleY(.94)}}
+@keyframes cathedral-rear-wing{0%,100%{transform:rotate(-3deg) scaleY(.94)}43%{transform:rotate(43deg) scaleY(.82)}72%{transform:rotate(13deg) scaleY(.88)}}
+@keyframes cathedral-feathers{0%,100%{transform:rotate(-5deg) scaleY(1)}40%{transform:rotate(15deg) scaleY(.77)}70%{transform:rotate(6deg) scaleY(.94)}}
+@keyframes cathedral-tail{0%,100%{transform:rotate(2deg)}48%{transform:rotate(-5deg)}}
 .home-intro-pending #header .brand{opacity:0;transition:opacity .24s ease}
 .home-intro-pending.home-intro-arriving #header .brand{opacity:1}
 @keyframes cathedral-arrival{from{opacity:0;transform:translateY(7px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
