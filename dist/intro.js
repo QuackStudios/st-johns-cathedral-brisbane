@@ -35,8 +35,8 @@
   const scale=to.width*.27/from.width;
   animations.push(mark.animate([
    {transform:'translate(0,0) scale(1)',opacity:1,offset:0},
-   {transform:`translate(${x*.18}px,${y*.32}px) scale(.88) rotate(-6deg)`,opacity:1,offset:.35},
-   {transform:`translate(${x*.72}px,${y*.84}px) scale(${Math.max(scale,.45)}) rotate(-3deg)`,opacity:1,offset:.78},
+   {transform:`translate(${x*.18}px,${y*.32}px) scale(.88) rotate(-10deg)`,opacity:1,offset:.35},
+   {transform:`translate(${x*.72}px,${y*.84}px) scale(${Math.max(scale,.45)}) rotate(-5deg)`,opacity:1,offset:.78},
    {transform:`translate(${x}px,${y}px) scale(${scale})`,opacity:0,offset:1}
   ],{duration:1400,easing:'cubic-bezier(.45,0,.2,1)',fill:'forwards'}));
   animations.push(glass.animate([{transform:'translateY(0)'},{transform:'translateY(-100%)'}],{duration:1450,delay:200,easing:'cubic-bezier(.65,0,.2,1)',fill:'forwards'}));
