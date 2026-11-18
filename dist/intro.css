@@ -21,3 +21,7 @@
 @keyframes cathedral-arrival{from{opacity:0;transform:translateY(7px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){#home-intro,.home-intro-pending #home-intro{display:none}.home-intro-pending #header .brand{opacity:1;transition:none}}
 .access-motion #home-intro{display:none}.access-motion.home-intro-pending #header .brand{opacity:1}
+
+/* A bank through the flight path, followed by an upright landing. */
+.home-intro-rear-profile{transform-box:view-box;transform-origin:300px 205px}
+.home-intro-launch .home-intro-bird{animation-play-state:paused}
