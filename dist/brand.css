@@ -155,3 +155,7 @@ footer.editorial-footer{background:#f1f3f6!important}
  #menuSections{border-bottom:0!important;padding-bottom:20px}
  #menu .menu-foot{border-top:1px solid #212a5726}
 }
+
+/* Quiet, recognisable access to display settings. */
+#menu .menu-accessibility{display:inline-flex;align-items:center;gap:7px}
+#menu .menu-accessibility .accessibility-icon{width:16px;height:16px;flex:0 0 16px;opacity:.75}
