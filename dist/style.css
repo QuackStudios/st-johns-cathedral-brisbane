@@ -100,8 +100,8 @@ footer.editorial-footer{margin:0;padding:75px 7% 25px;background:#eae7df!importa
 .gateway-grid>a:nth-child(-n+2)>.eyebrow{margin-top:auto}.gateway-grid>a:nth-child(-n+2)>span:last-child{margin-top:0}
 
 /* Photographs supplied for the home page, November 2026. */
-.sunday-services>a:nth-child(2)::before{background-image:url('assets/woman-preaching.jpg');background-position:49% 23%}
-.sunday-services>a:nth-child(4)::before{background-image:url('assets/young-choristers.jpg');background-position:51% 20%}
+.sunday-services>a:nth-child(2)::before{background-image:url('assets/priest-in-stole.webp');background-position:49% 23%}
+.sunday-services>a:nth-child(4)::before{background-image:url('assets/choristers-singing.webp');background-position:51% 20%}
 .living-cathedral{grid-template-columns:1.2fr 1fr;max-width:1250px;align-items:center}
 .living-photo{height:auto;max-height:none;aspect-ratio:1.5}
 .living-photo img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center}
@@ -116,7 +116,7 @@ footer.editorial-footer{margin:0;padding:75px 7% 25px;background:#eae7df!importa
 .sunday-services>a:nth-child(2)::before{background-size:auto 320%;background-position:46% 16%}
 /* Wider scenes, with the people sitting lower and to the right of the typography. */
 .sunday-services>a:nth-child(2)::before{inset:29% 0 -29%;background-size:auto 175%;background-position:39% 0%;mask-image:linear-gradient(to bottom,transparent,#000 16%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%)}
-.sunday-services>a:nth-child(4)::before{inset:34% 0 -34%;background-size:auto 112%;background-position:42% 0%;mask-image:linear-gradient(to bottom,transparent,#000 16%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%)}
+.sunday-services>a:nth-child(4)::before{inset:34% 0 -34%;background-size:100% auto;background-position:50% 0%;mask-image:linear-gradient(to bottom,transparent,#000 16%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 16%)}
 .sunday-services>a:nth-child(2)::after,.sunday-services>a:nth-child(4)::after{background:linear-gradient(90deg,#0008,transparent 85%),linear-gradient(180deg,#0001 30%,#0002 65%,#0008 100%)}
 /* The footer is its own destination; retire the pinned navigation on arrival. */
 #header{transition:transform .3s ease,opacity .25s ease,visibility .3s,background .35s,box-shadow .35s,color .35s}
