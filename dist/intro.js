@@ -1,4 +1,4 @@
-/* The arrival runs once per tab, on the unanchored homepage only. */
+/* Replay the arrival on each fresh, unanchored homepage load. */
 (()=>{
  const root=document.documentElement, intro=document.getElementById('home-intro');
  if(!intro)return;
@@ -22,10 +22,8 @@
  window.addEventListener('scroll',onScroll,{passive:true});
  motion.addEventListener('change',onMotion);
  if(motion.matches||root.classList.contains('access-motion')||scrollY>20){finish();return}
- try{sessionStorage.setItem('cathedral-home-arrival','seen')}catch{}
  const mark=intro.querySelector('.home-intro-mark'),glass=intro.querySelector('.home-intro-glass');
- const image=mark.querySelector('img');
- image.addEventListener('error',finish,{once:true});
+ mark.querySelector('svg').addEventListener('error',finish,{once:true});
  timers.push(setTimeout(()=>{
   if(done)return;
   const brand=document.querySelector('#header .brand');
@@ -37,12 +35,13 @@
   const scale=to.width*.27/from.width;
   animations.push(mark.animate([
    {transform:'translate(0,0) scale(1)',opacity:1,offset:0},
-   {opacity:1,offset:.65},
+   {transform:`translate(${x*.18}px,${y*.32}px) scale(.88) rotate(-6deg)`,opacity:1,offset:.35},
+   {transform:`translate(${x*.72}px,${y*.84}px) scale(${Math.max(scale,.45)}) rotate(-3deg)`,opacity:1,offset:.78},
    {transform:`translate(${x}px,${y}px) scale(${scale})`,opacity:0,offset:1}
-  ],{duration:950,easing:'cubic-bezier(.65,0,.2,1)',fill:'forwards'}));
-  animations.push(glass.animate([{transform:'translateY(0)'},{transform:'translateY(-100%)'}],{duration:1050,delay:100,easing:'cubic-bezier(.65,0,.2,1)',fill:'forwards'}));
-  timers.push(setTimeout(()=>root.classList.add('home-intro-arriving'),690));
-  timers.push(setTimeout(finish,1160));
- },420));
- timers.push(setTimeout(finish,2200));
+  ],{duration:1550,easing:'cubic-bezier(.45,0,.2,1)',fill:'forwards'}));
+  animations.push(glass.animate([{transform:'translateY(0)'},{transform:'translateY(-100%)'}],{duration:1350,delay:350,easing:'cubic-bezier(.65,0,.2,1)',fill:'forwards'}));
+  timers.push(setTimeout(()=>root.classList.add('home-intro-arriving'),1100));
+  timers.push(setTimeout(finish,1710));
+ },2400));
+ timers.push(setTimeout(finish,5000));
 })();
