@@ -152,6 +152,6 @@ footer.editorial-footer{background:#f1f3f6!important}
 /* Retain the quiet dividers around the mobile navigation. */
 @media(max-width:800px){
  #menu .overlay-top{border-bottom:1px solid #212a5726}
- #menuSections{border-bottom:1px solid #212a571c!important;padding-bottom:20px}
+ #menuSections{border-bottom:0!important;padding-bottom:20px}
  #menu .menu-foot{border-top:1px solid #212a5726}
 }
