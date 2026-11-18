@@ -22,12 +22,30 @@ function closeOverlays(){const open=document.querySelector('.overlay:not([hidden
 
 function openOverlay(which){previousFocus=document.activeElement.closest('#menu')?$('#menuButton'):document.activeElement;document.querySelectorAll('.overlay').forEach(x=>x.hidden=x.id!==which);document.body.classList.add('locked');setBackgroundInert(true);if(previousFocus?.tagName==='BUTTON')previousFocus.setAttribute('aria-expanded','true');$('#menuButton').setAttribute('aria-expanded',String(which==='menu'));$('#'+which+' .close').focus()}
 const menuIntroductions={Worship:'Find a Service, explore prayer, or mark a significant moment.',Music:'Discover the voices, instruments and people behind our music.',Visit:'Plan your time here, and discover the stories in the stone.','Faith & Spirituality':'Bring your questions. Make room for reflection.','Our Work':'Explore how faith becomes care, connection and action.','What’s On':'Find your next Cathedral experience.',About:'Discover our story, our people and our purpose.',Congregation:'Find your place in the life of St John’s.',Support:'Help sustain a place of worship, music and welcome.',Contact:'Three simple ways to reach the right team.'};
-function renderMenu(s){
- $('#menuContent').innerHTML=`<div class="menu-category-heading"><p class="eyebrow">DISCOVER ST JOHN’S</p><h2>${s}</h2><p>${menuIntroductions[s]}</p></div><div class="menu-columns ${s==='Contact'?'contact-menu':''} ${Object.keys(sections[s]).length===4?'four-groups':''}">${Object.entries(sections[s]).map(([group,links])=>`<section class="menu-group"><h3>${group}</h3>${links.map(t=>`<a href="#${slug(t)}">${t}<span aria-hidden="true">↗</span></a>`).join('')}</section>`).join('')}</div>`;
- document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===s);b.setAttribute('aria-pressed',String(b.dataset.tab===s))});
+const mobileMenuQuery=window.matchMedia('(max-width:800px)');
+let currentMenuSection=null;
+function placeMenuContent(){
+ const content=$('#menuContent');
+ const selected=[...document.querySelectorAll('#menuSections [data-tab]')].find(b=>b.dataset.tab===currentMenuSection);
+ content.hidden=mobileMenuQuery.matches&&!selected;
+ if(mobileMenuQuery.matches&&selected)selected.after(content);
+ else $('#menu .menu-layout').append(content);
+ document.querySelectorAll('#menuSections [data-tab]').forEach(b=>{
+  const active=b===selected;
+  b.classList.toggle('active',active);
+  if(mobileMenuQuery.matches){b.removeAttribute('aria-pressed');b.setAttribute('aria-expanded',String(active));b.setAttribute('aria-controls','menuContent')}
+  else{b.removeAttribute('aria-expanded');b.removeAttribute('aria-controls');b.setAttribute('aria-pressed',String(active))}
+ });
 }
-document.addEventListener('click',e=>{if(e.target.closest('[data-open-accessibility]')){openOverlay('accessibility-panel');return}const jump=e.target.closest('[data-article-jump]');if(jump){e.preventDefault();const target=document.getElementById(jump.dataset.articleJump);target?.scrollIntoView({behavior:document.documentElement.classList.contains('access-motion')?'auto':'smooth'});if(target){target.tabIndex=-1;target.focus({preventScroll:true})}return}const s=e.target.closest('[data-section]');if(s){renderMenu(s.dataset.section);openOverlay('menu')}const t=e.target.closest('[data-tab]');if(t)renderMenu(t.dataset.tab);if(e.target.closest('.close'))closeOverlays();if(e.target.closest('.overlay a[href^="#"]'))closeOverlays()});
-$('#menuButton').onclick=()=>{renderMenu('Worship');openOverlay('menu')};$('#searchButton').onclick=()=>{openOverlay('search');renderSearch();$('#query').focus()};
+mobileMenuQuery.addEventListener('change',()=>{if(!mobileMenuQuery.matches&&!currentMenuSection)renderMenu('Worship');else placeMenuContent()});
+function renderMenu(s){
+ currentMenuSection=s;
+ if(!s){placeMenuContent();return}
+ $('#menuContent').innerHTML=`<div class="menu-category-heading"><p class="eyebrow">DISCOVER ST JOHN’S</p><h2>${s}</h2><p>${menuIntroductions[s]}</p></div><div class="menu-columns ${s==='Contact'?'contact-menu':''} ${Object.keys(sections[s]).length===4?'four-groups':''}">${Object.entries(sections[s]).map(([group,links])=>`<section class="menu-group"><h3>${group}</h3>${links.map(t=>`<a href="#${slug(t)}">${t}<span aria-hidden="true">↗</span></a>`).join('')}</section>`).join('')}</div>`;
+ placeMenuContent();
+}
+document.addEventListener('click',e=>{if(e.target.closest('[data-open-accessibility]')){openOverlay('accessibility-panel');return}const jump=e.target.closest('[data-article-jump]');if(jump){e.preventDefault();const target=document.getElementById(jump.dataset.articleJump);target?.scrollIntoView({behavior:document.documentElement.classList.contains('access-motion')?'auto':'smooth'});if(target){target.tabIndex=-1;target.focus({preventScroll:true})}return}const s=e.target.closest('[data-section]');if(s){renderMenu(s.dataset.section);openOverlay('menu')}const t=e.target.closest('[data-tab]');if(t)renderMenu(mobileMenuQuery.matches&&currentMenuSection===t.dataset.tab?null:t.dataset.tab);if(e.target.closest('.close'))closeOverlays();if(e.target.closest('.overlay a[href^="#"]'))closeOverlays()});
+$('#menuButton').onclick=()=>{renderMenu(mobileMenuQuery.matches?null:'Worship');openOverlay('menu')};$('#searchButton').onclick=()=>{openOverlay('search');renderSearch();$('#query').focus()};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeOverlays();return}const dialog=document.querySelector('.overlay:not([hidden])');if(e.key==='Tab'&&dialog){const f=[...dialog.querySelectorAll('a,button,input,select,[tabindex="0"]')].filter(x=>x.getClientRects().length);if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f.at(-1).focus()}else if(!e.shiftKey&&document.activeElement===f.at(-1)){e.preventDefault();f[0].focus()}}});
 function renderSearch(){const q=$('#query').value.toLowerCase().trim();const matches=entries.filter(x=>!q||x.title.toLowerCase().includes(q)||x.section.toLowerCase().includes(q));$('#results').innerHTML=(q?`<p>${matches.length} results</p>`:'<p>Popular places to begin</p>')+(q?matches:entries.filter(x=>['Service Times','Plan Your Visit','Concerts and Recitals','Contact Us','Upcoming Events'].includes(x.title))).map(x=>`<a href="#${x.id}">${x.title}<small>${x.section} ↗</small></a>`).join('')+(matches.length?'':'<p>Try “worship”, “music” or “visit”, or contact the Cathedral office.</p>')}
 $('#query').addEventListener('input',renderSearch);
