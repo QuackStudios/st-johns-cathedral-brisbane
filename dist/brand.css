@@ -1,0 +1,104 @@
+/* Gentle brand integration: keep the light editorial design and subtle glass.
+   Navy is reserved for selected display type and the supplied logo. */
+:root{--display:'SangBleu Kingdom','Iowan Old Style','Palatino Linotype','Book Antiqua',Georgia,serif;--brand-navy:#212a57;--brand-ivory:#f9f4e9}
+body{color:#292925}
+.section-heading h2,.living-copy h2,.visit-gateway h2,.welcome-grid h2,.care-gateway h2,.photo-stories>h2,.article-title-row h1,.article-chapter h2,.article-onward h2{color:var(--brand-navy)}
+#header .brand .blue{filter:none}
+.gateway-grid>a:not(:nth-child(-n+2)) h3{color:var(--brand-navy)}
+.article-title-row h1{letter-spacing:-.035em}
+/* A trace of warmth, with the original scroll transitions retained. */
+.today-panel{background:#fdfbf6;border-color:#d6d3cb}
+.today-intro{border-color:#d6d3cb}
+#today-list .service-next{background:#212a57;color:#fff;border-color:#212a57}
+footer.editorial-footer{background:#f2efe7!important}
+#menu::before{opacity:.18}
+/* Preserve user-selected high contrast. */
+.access-contrast .section-heading h2,.access-contrast .living-copy h2,.access-contrast .visit-gateway h2,.access-contrast .welcome-grid h2,.access-contrast .care-gateway h2,.access-contrast .article-title-row h1,.access-contrast .article-chapter h2,.access-contrast .article-onward h2,.access-contrast .gateway-grid>a:not(:nth-child(-n+2)) h3{color:#000}
+.access-contrast .today-panel,.access-contrast footer.editorial-footer{background:#fff!important;color:#000!important}
+/* Directional symbols only; the text typefaces remain unchanged. */
+@font-face{font-family:'Cathedral Arrows';src:url('fonts/navigation-arrows.woff') format('woff');unicode-range:U+2197,U+2193;font-display:swap}
+body{font-family:'Cathedral Arrows',Arial,Helvetica,sans-serif}
+h1,h2,.gateway-grid h3,.photo-story-grid h3{font-family:'Cathedral Arrows',var(--display)}
+
+/* Standalone eagle, enlarged within the menu background. */
+#menu::before{background-image:url('assets/eagle-standalone-outline.svg');inset:22% -8% -8% 36%;background-size:contain;background-position:right bottom;opacity:.18}
+@media(max-width:800px){#menu::before{inset:36% -22% -3% 2%;opacity:.15}}
+/* A quieter menu: a clear index, an editorial heading and useful onward paths. */
+#menu{background:#151614fa}
+#menu .overlay-top{height:96px;border-bottom:1px solid #ffffff1c}
+#menu .overlay-top .close{border:0;font-size:.9375rem;padding:15px 0 15px 25px}
+#menu .menu-layout{grid-template-columns:255px minmax(0,1fr);gap:6%;padding:32px 0 34px;align-items:start}
+#menuSections{padding:0 28px 0 0;border-right:1px solid #ffffff19!important;gap:2px}
+#menuSections .menu-index-label{font-size:.625rem;letter-spacing:.12em;color:#bcbdb5;margin:0 0 16px;padding-left:0}
+#menuSections>button{font-family:var(--display);font-size:1.75rem;letter-spacing:-.02em;min-height:46px;padding:7px 0;line-height:1.16;text-align:left;color:#e3e3dd;position:relative;transition:color .2s}
+#menuSections>button.active{background:none;color:white;border:0;padding-left:0}
+#menuSections>button.active::after{content:'↗';font-family:'Cathedral Arrows',Arial,sans-serif;position:absolute;right:0;top:12px;font-size:1.1rem;color:#eee2c3}
+#menuSections>button:hover{color:white;background:none}
+#menuSections .utility-label{margin:26px 0 10px}
+#menuSections .menu-utility-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
+#menuSections .menu-utility-list button{font-family:inherit;font-size:.9375rem;min-height:38px;padding:8px 0;text-align:left;border:0;color:#bfc0b8;background:transparent}
+#menuSections .menu-utility-list button.active{color:#fff;text-decoration:underline;text-underline-offset:6px}
+#menuSections .menu-utility-list button:hover{color:white}
+#menu .menu-category-heading{padding:0 0 36px}
+#menu .menu-category-heading>h2{font-size:3.3rem!important;line-height:1.05;margin:0 0 14px!important;color:#f5f2e9}
+#menu .menu-category-heading>p:not(.eyebrow){display:block;font-size:.9375rem;line-height:1.5;color:#bfc0b8;margin:0;max-width:620px}
+#menu .menu-columns{gap:38px}
+#menu .menu-columns.four-groups{gap:25px}
+#menu .menu-group h3{font-size:.8125rem;line-height:1.55;font-family:inherit;font-weight:600;letter-spacing:.06em;color:#eee2c3;margin:0 0 19px;padding:0;border:0}
+#menu .menu-group a{font-size:1rem;line-height:1.45;min-height:42px;padding:9px 0;color:#d1d2ca;text-decoration:none!important}
+#menu .menu-group a:hover,#menu .menu-group a:focus-visible{color:white;text-decoration:underline!important;text-underline-offset:5px}
+#menu .contact-menu .menu-group a{font-family:var(--display);font-size:1.9rem;min-height:65px;padding:14px 0;color:#f5f2e9}
+#menu::before{inset:auto -3% 77px auto;width:min(42vw,580px);height:min(46vh,450px);background-position:right bottom;opacity:.20}
+#menu .menu-foot{min-height:78px;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:25px;border-top:1px solid #ffffff26;background:transparent}
+#menu .menu-shortcuts{display:flex;gap:36px;flex-wrap:wrap}
+#menu .menu-shortcuts a{font-size:.9375rem;line-height:1.5;display:flex;align-items:center;gap:20px;color:#f4f2e9;min-height:40px;text-decoration:none}
+#menu .menu-shortcuts a span{font-family:'Cathedral Arrows',Arial,sans-serif;color:#b9bcb1;font-size:1rem}
+#menu .menu-shortcuts a:hover{text-decoration:underline;text-underline-offset:5px}
+#menu .menu-accessibility{font-size:.8125rem;color:#bfc0b8;text-decoration:underline;text-underline-offset:5px;padding:10px 0;min-height:40px}
+@media(min-width:801px) and (max-height:790px){#menu .overlay-top{height:78px}#menu .menu-layout{padding:22px 0}#menuSections>button{font-size:1.5rem;min-height:40px}#menuSections .utility-label{margin-top:18px}#menu .menu-category-heading{padding-bottom:26px}#menu .menu-category-heading>h2{font-size:2.7rem!important}#menu .menu-group a{font-size:.9375rem;min-height:37px;padding:7px 0}#menu .menu-foot{min-height:66px;padding:12px 0}}
+@media(min-width:801px) and (max-width:1100px){#menu .menu-layout{grid-template-columns:210px minmax(0,1fr);gap:4%}#menuSections{padding-right:20px}#menuSections>button{font-size:1.5rem}#menu .menu-columns{gap:25px}#menu .menu-columns.four-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 30px}#menu .menu-columns.four-groups a{font-size:.875rem;min-height:33px;padding:6px 0}#menu .menu-columns.four-groups h3{margin-bottom:10px}#menu .menu-shortcuts{gap:22px}}
+@media(max-width:800px){#menu .overlay-top{height:80px}#menu .menu-layout{display:block;padding:25px 0}#menuSections{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;padding:0 0 22px;border-right:0!important;border-bottom:1px solid #ffffff1c!important;margin-bottom:26px}#menuSections .menu-index-label{grid-column:1/-1;margin-bottom:10px}#menuSections>button{font-size:1.5rem;min-height:44px;padding:8px 0}#menuSections>button.active::after{right:3px;top:12px;font-size:.9rem}#menuSections .utility-label{margin-top:17px}#menuSections .menu-utility-list{grid-column:1/-1;grid-template-columns:repeat(4,1fr);gap:8px}#menuSections .menu-utility-list button{font-size:.8125rem;min-height:44px}#menu .menu-category-heading{padding-bottom:25px}#menu .menu-category-heading>h2{font-size:2.6rem!important}#menu .menu-category-heading>p:not(.eyebrow){font-size:.875rem}#menu .menu-columns,#menu .menu-columns.four-groups{grid-template-columns:1fr 1fr;gap:25px 22px}#menu .menu-group h3{font-size:.75rem;margin-bottom:13px}#menu .menu-group a{font-size:.9375rem;min-height:44px;padding:10px 0}#menu::before{width:75vw;height:50vh;bottom:100px;right:-18%;opacity:.13}#menu .menu-foot{display:block;padding:20px 0}#menu .menu-shortcuts{gap:10px 24px}#menu .menu-shortcuts a{font-size:.875rem;gap:10px}#menu .menu-accessibility{margin-top:12px}}
+@media(max-width:420px){#menu .menu-columns,#menu .menu-columns.four-groups{grid-template-columns:1fr}#menuSections .menu-utility-list{grid-template-columns:1fr 1fr}}
+.enlarged-type #menu .menu-category-heading>p:not(.eyebrow){max-width:100%}
+.access-contrast #menu{background:#000!important}.access-contrast #menu .menu-group a,.access-contrast #menu .menu-accessibility{color:#fff}
+/* Light menu, with an oversized eagle settling below the link groups. */
+#menu{background:#fff;color:#212a57;backdrop-filter:none;-webkit-backdrop-filter:none}
+#menu .overlay-top{border-color:#212a571c}
+#menu .overlay-brand img{filter:brightness(0) saturate(100%);opacity:.9}
+#menu .overlay-top .close{color:#212a57}
+#menuSections{border-right-color:#212a571c!important}
+#menuSections .menu-index-label{color:#696b73}
+#menuSections>button{color:#474b59}
+#menuSections>button.active,#menuSections>button:hover{color:#212a57}
+#menuSections>button.active::after{color:#212a57}
+#menuSections .menu-utility-list button{color:#666974}
+#menuSections .menu-utility-list button.active,#menuSections .menu-utility-list button:hover{color:#212a57}
+#menu .menu-category-heading>h2{color:#212a57}
+#menu .menu-category-heading>p:not(.eyebrow){color:#666974}
+#menu .menu-group h3{color:#212a57}
+#menu .menu-group a{color:#4c505b}
+#menu .menu-group a:hover,#menu .menu-group a:focus-visible,#menu .contact-menu .menu-group a{color:#212a57}
+#menu::before{width:min(58vw,820px);height:min(64vh,650px);right:-5%;bottom:-18%;opacity:.14;filter:brightness(0) saturate(100%);background-position:right bottom}
+#menu .menu-foot{border-color:#212a5726}
+#menu .menu-shortcuts a{color:#212a57}
+#menu .menu-shortcuts a span{color:#747987}
+#menu .menu-accessibility{color:#666974}
+#menu a:focus-visible,#menu button:focus-visible{outline-color:#212a57}
+@media(max-width:800px){#menuSections{border-bottom-color:#212a571c!important}#menu::before{width:110vw;height:64vh;right:-25%;bottom:-15%;opacity:.11}}
+.access-contrast #menu{background:#fff!important;color:#000!important}
+.access-contrast #menu .menu-group a,.access-contrast #menu .menu-accessibility{color:#000}
+#menu .overlay-brand img{filter:none;opacity:1}
+/* Scroll-driven, pale brand colours: the page stays light while its mood shifts. */
+body,#home{transition:background-color .35s ease-out}
+#home .living-cathedral,#home .service-hub,#home .gateway-section,#home .visit-gateway,#home #welcome,#home .photo-stories,#home .care-gateway{background:transparent}
+#home .today-panel{background:rgba(255,255,255,.42)}
+.access-motion body,.access-motion #home{transition:none}
+@media(prefers-reduced-motion:reduce){body,#home{transition:none}}
+
+/* Crisp white and silver grounds replace the warm paper palette. */
+:root{--brand-ivory:#f9fafc;--paper:#f9fafc}
+footer.editorial-footer{background:#f1f3f6!important}
+.today-panel{border-color:#d7dce3}.today-intro{border-color:#d7dce3}
+#menu::before{opacity:.30;filter:brightness(0) saturate(100%)}
+@media(max-width:800px){#menu::before{opacity:.25}}
+.access-contrast footer.editorial-footer{background:#fff!important}

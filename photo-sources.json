@@ -1,0 +1,138 @@
+[
+  {
+    "name": "gathering",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/6.events-gatherings-1.jpg",
+    "width": 768,
+    "height": 328
+  },
+  {
+    "name": "choristers",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2021/07/Girl-Choristers-website-promo.jpeg",
+    "width": 210,
+    "height": 320
+  },
+  {
+    "name": "choir",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2018/07/Boys-Chorister_400px.jpg",
+    "width": 400,
+    "height": 416
+  },
+  {
+    "name": "mass",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2020/03/Mass.jpg",
+    "width": 1000,
+    "height": 600
+  },
+  {
+    "name": "evensong",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2020/03/Evensong.jpeg",
+    "width": 684,
+    "height": 217
+  },
+  {
+    "name": "prayer",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2020/03/Daily-Office.jpg",
+    "width": 1296,
+    "height": 1296
+  },
+  {
+    "name": "candles",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/00.candles-contemplative-eucharist.jpg",
+    "width": 425,
+    "height": 425
+  },
+  {
+    "name": "community",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2019/07/CO_00.PC-group-shot_ST-foto_CROP_400pxSQ.jpg",
+    "width": 400,
+    "height": 400
+  },
+  {
+    "name": "pantry",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2019/05/2019.05a_TrinPantry_SQ_400px.jpg",
+    "width": 400,
+    "height": 400
+  },
+  {
+    "name": "organ",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/09/MU_51.organ-stops.jpg",
+    "width": 400,
+    "height": 400
+  },
+  {
+    "name": "liturgy",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "carving",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/3.angel-carving-crop.jpg",
+    "width": 1129,
+    "height": 639
+  },
+  {
+    "name": "exterior",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/2695SJC-JLP-FC_96RGB_600pxW.jpg",
+    "width": 600,
+    "height": 860
+  },
+  {
+    "name": "light",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/5.jpg",
+    "width": 1600,
+    "height": 1200
+  },
+  {
+    "name": "healing",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2018/06/2018_healing-hands.jpg",
+    "width": 400,
+    "height": 400
+  },
+  {
+    "name": "wedding1",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/SJC-W-01a-1.jpg",
+    "width": 1000,
+    "height": 500
+  },
+  {
+    "name": "wedding2",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/SJC-W-02a-1.jpg",
+    "width": 1000,
+    "height": 500
+  },
+  {
+    "name": "wedding3",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/SJC-W-03a-1.jpg",
+    "width": 1000,
+    "height": 500
+  },
+  {
+    "name": "wedding4",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/SJC-W-04a-1.jpg",
+    "width": 1000,
+    "height": 500
+  },
+  {
+    "name": "font",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2017/08/Baptism-font-illuminations.jpg",
+    "width": 582,
+    "height": 676
+  },
+  {
+    "name": "outreach",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2021/05/IMG_0768-scaled.jpg",
+    "width": 2560,
+    "height": 1920
+  },
+  {
+    "name": "sanctuary",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2021/06/Sanctuary.jpeg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "name": "peace",
+    "url": "https://www.stjohnscathedral.com.au/wp-content/uploads/2021/09/Peace-scaled.jpeg",
+    "width": 2560,
+    "height": 1707
+  }
+]
